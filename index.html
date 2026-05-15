@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NARSIS DECALI — Trading Premium</title>
+<title>DECALI — Trading Premium</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css">
-<link rel="icon" type="image/png" href="logo.png">
 <style>
   :root {
     --black: #050505;
@@ -80,74 +79,54 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    padding: 20px 6%;
+    padding: 18px 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all 0.4s ease;
   }
   nav.scrolled {
-    background: rgba(5,5,5,0.92);
+    background: rgba(5,5,5,0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(198,255,0,0.1);
-    padding: 14px 6%;
-    box-shadow: 0 4px 40px rgba(0,0,0,0.6);
+    border-bottom: 1px solid rgba(198,255,0,0.12);
+    padding: 12px 6%;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.7);
   }
 
   .logo {
     display: flex;
     align-items: center;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-decoration: none;
+    justify-content: center;
+    transition: all 0.3s ease;
   }
   .logo:hover {
     transform: scale(1.05);
   }
+
   .logo img { 
     height: 48px; 
     width: auto;
-    filter: drop-shadow(0 0 10px rgba(198,255,0,0.2));
-    transition: all 0.4s ease;
-    image-rendering: -webkit-optimize-contrast;
-  }
-  .logo span {
-    font-family: var(--font-alt);
-    font-size: 19px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: var(--white);
-    margin-left: 12px;
-    text-transform: uppercase;
-    line-height: 1;
-  }
-  .logo span strong { color: var(--lime); }
-
-  .footer-brand {
-    display: inline-flex;
-    align-items: center;
-    margin-bottom: 24px;
-    transition: transform 0.3s ease;
-    text-decoration: none;
-  }
-  .footer-brand:hover {
-    transform: translateY(-3px);
-  }
-  .footer-brand img {
-    height: 40px;
-    width: auto;
-    filter: drop-shadow(0 0 8px rgba(198,255,0,0.15));
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 12px rgba(198,255,0,0.4)); 
     transition: all 0.3s ease;
   }
-  .footer-brand span {
-    font-family: var(--font-alt);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--white);
-    margin-left: 10px;
-    text-transform: uppercase;
+  .logo img:hover {
+    filter: drop-shadow(0 0 20px rgba(198,255,0,0.6));
+    transform: scale(1.05);
   }
-  .footer-brand span strong { color: var(--lime); }
+  .footer-logo-img { 
+    height: 48px; 
+    width: auto;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 8px rgba(198,255,0,0.2)); 
+    margin-bottom: 20px; 
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .footer-logo-img:hover {
+    filter: drop-shadow(0 0 15px rgba(198,255,0,0.4));
+  }
 
   .nav-links {
     display: flex;
@@ -816,44 +795,92 @@
     box-shadow: 0 10px 40px rgba(198,255,0,0.08);
   }
 
-  .testi-stars { color: var(--lime); font-size: 14px; margin-bottom: 18px; letter-spacing: 2px; }
+  .testi-stars { 
+    color: var(--lime); 
+    font-size: 16px; 
+    margin-bottom: 18px; 
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px rgba(198,255,0,0.3);
+    display: inline-block;
+    animation: starGlow 2s ease-in-out infinite;
+  }
+  @keyframes starGlow {
+    0%, 100% { text-shadow: 0 0 8px rgba(198,255,0,0.3); }
+    50% { text-shadow: 0 0 16px rgba(198,255,0,0.5); }
+  }
   .testi-quote {
     font-size: 15px;
     color: var(--gray);
     line-height: 1.8;
     margin-bottom: 28px;
     font-style: italic;
+    position: relative;
+    padding-left: 18px;
+  }
+  .testi-quote::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -8px;
+    font-size: 36px;
+    color: rgba(198,255,0,0.2);
+    font-family: Georgia, serif;
   }
   .testi-result {
-    background: rgba(198,255,0,0.08);
-    border: 1px solid rgba(198,255,0,0.2);
-    border-radius: 8px;
-    padding: 10px 14px;
+    background: linear-gradient(135deg, rgba(198,255,0,0.12) 0%, rgba(198,255,0,0.04) 100%);
+    border: 1px solid rgba(198,255,0,0.25);
+    border-radius: 10px;
+    padding: 12px 16px;
     font-size: 13px;
     color: var(--lime);
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    text-shadow: 0 0 6px rgba(198,255,0,0.2);
   }
-  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-result i { font-size: 14px; }
+  
+  .testi-author { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  
   .testi-avatar {
-    width: 48px; height: 48px;
+    width: 56px; 
+    height: 56px;
     border-radius: 50%;
-    border: 2px solid rgba(198,255,0,0.3);
+    border: 2px solid rgba(198,255,0,0.4);
     overflow: hidden;
-    background: rgba(198,255,0,0.1);
+    background: linear-gradient(135deg, rgba(198,255,0,0.15) 0%, rgba(198,255,0,0.05) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
     color: var(--lime);
     font-weight: 700;
     font-family: var(--font-alt);
+    box-shadow: 0 0 16px rgba(198,255,0,0.2), inset 0 0 16px rgba(198,255,0,0.1);
+    flex-shrink: 0;
   }
-  .testi-name { font-size: 14px; font-weight: 700; }
-  .testi-role { font-size: 12px; color: var(--gray); }
+  
+  .testi-info { flex-grow: 1; }
+  .testi-name { 
+    font-size: 14px; 
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+  .testi-role { 
+    font-size: 11px; 
+    color: var(--gray); 
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
 
   .swiper-pagination-bullet { background: rgba(255,255,255,0.3); }
   .swiper-pagination-bullet-active { background: var(--lime); }
@@ -1007,6 +1034,7 @@
     max-width: 1200px;
     margin: 0 auto 60px;
   }
+  .footer-brand img { height: 40px; margin-bottom: 20px; }
   .footer-brand p { color: var(--gray); font-size: 14px; line-height: 1.8; max-width: 280px; }
   .footer-socials { display: flex; gap: 12px; margin-top: 24px; }
   .social-btn {
@@ -1121,8 +1149,6 @@
     .nav-cta { display: none; }
   }
   @media (max-width: 768px) {
-    .logo img { height: 42px; }
-    .footer-brand img { height: 40px; }
     .section-pad { padding: 70px 5%; }
     #hero { padding: 100px 5% 70px; }
     .services-grid { grid-template-columns: 1fr; }
@@ -1133,6 +1159,8 @@
     .hero-btns { flex-direction: column; align-items: flex-start; }
     .cursor, .cursor-ring { display: none; }
     .dash-pairs { grid-template-columns: repeat(3,1fr); }
+    .ts-card { min-width: calc(50% - 12px) !important; padding: 24px !important; }
+    .ts-outer { padding: 0 60px; }
   }
   @media (max-width: 576px) {
     .stats-grid { grid-template-columns: 1fr; }
@@ -1141,7 +1169,180 @@
     .contact-form { padding: 24px; }
     .dash-pairs { grid-template-columns: repeat(2,1fr); }
     .hero-stats { gap: 20px; }
+    .ts-card { 
+      min-width: 100% !important; 
+      padding: 20px 16px !important;
+    }
+    .ts-outer { 
+      padding: 0 48px; 
+      margin: 0 -5%;
+    }
+    .testi-stars {
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+    .testi-quote {
+      font-size: 14px;
+      margin-bottom: 20px;
+      padding-left: 14px;
+    }
+    .testi-result {
+      padding: 10px 12px;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+    .testi-author {
+      gap: 12px;
+      padding-top: 16px;
+    }
+    .testi-avatar {
+      width: 48px;
+      height: 48px;
+      font-size: 16px;
+    }
+    .testi-name {
+      font-size: 13px;
+    }
+    .testi-role {
+      font-size: 10px;
+    }
   }
+  .tg-nav-btn {
+    width: 40px; height: 40px;
+    background: rgba(0,136,204,0.15);
+    border: 1px solid rgba(0,136,204,0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #29b6f6;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+  .tg-nav-btn:hover {
+    background: rgba(0,136,204,0.3);
+    box-shadow: 0 0 20px rgba(0,136,204,0.4);
+    transform: translateY(-2px);
+    color: #29b6f6;
+  }
+
+  /* ─── SLIDER TESTIMONIALS CUSTOM ───────────────────────── */
+  .ts-outer {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .ts-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+  .ts-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 32px;
+    min-width: calc(33.333% - 16px);
+    flex-shrink: 0;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+  .ts-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(198,255,0,0.4), transparent);
+    transform: scaleX(0);
+    transition: transform 0.35s ease;
+  }
+  .ts-card:hover {
+    border-color: rgba(198,255,0,0.25);
+    background: linear-gradient(135deg, rgba(198,255,0,0.06) 0%, rgba(198,255,0,0.02) 100%);
+    box-shadow: 0 12px 48px rgba(198,255,0,0.12), 0 0 1px rgba(198,255,0,0.15);
+    transform: translateY(-6px);
+  }
+  .ts-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .ts-btn {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 48px; height: 48px;
+    background: rgba(198,255,0,0.1);
+    border: 1px solid rgba(198,255,0,0.25);
+    border-radius: 50%;
+    color: var(--lime);
+    font-size: 16px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  .ts-btn:hover { 
+    background: var(--lime); 
+    color: var(--black); 
+    box-shadow: 0 0 30px rgba(198,255,0,0.5);
+    transform: translateY(-50%) scale(1.1);
+  }
+  .ts-prev { left: -66px; }
+  .ts-next { right: -66px; }
+  
+  .ts-dots {
+    display: flex; 
+    justify-content: center; 
+    gap: 8px;
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  .ts-dot {
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .ts-dot:hover {
+    background: rgba(255,255,255,0.4);
+  }
+  .ts-dot.active { 
+    background: var(--lime); 
+    width: 28px; 
+    border-radius: 4px; 
+    box-shadow: 0 0 16px rgba(198,255,0,0.6);
+  }
+  
+  @media (max-width: 1300px) {
+    .ts-prev { left: 8px; }
+    .ts-next { right: 8px; }
+    .ts-outer { padding: 0 70px; }
+  }
+  @media (max-width: 1024px) {
+    .ts-card { min-width: calc(50% - 12px); }
+    .ts-outer { padding: 0 60px; }
+  }
+  @media (max-width: 640px) {
+    .ts-card { 
+      min-width: 100%; 
+      padding: 24px 20px;
+    }
+    .ts-outer { padding: 0 50px; }
+    .ts-prev, .ts-next {
+      width: 40px;
+      height: 40px;
+      font-size: 14px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1158,8 +1359,7 @@
 <!-- ══ NAVBAR ══════════════════════════════════════════ -->
 <nav id="navbar">
   <a href="#hero" class="logo">
-    <img src="logo.png" alt="Logo">
-    <span>NARSIS <strong>DECALI</strong></span>
+    <img src="logo.png" alt="DECALI">
   </a>
 
   <ul class="nav-links">
@@ -1169,7 +1369,10 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 
-  <a href="#" class="nav-cta" onclick="openWhatsApp('','','','Je souhaite rejoindre DECALI et en savoir plus sur vos formations trading.')">
+  <a href="https://t.me/+Qfriu9it1bpkMmJk" target="_blank" class="tg-nav-btn" title="Rejoindre Telegram">
+    <i class="fab fa-telegram"></i>
+  </a>
+  <a href="https://wa.me/22899616267" target="_blank" class="nav-cta">
     <i class="fab fa-whatsapp"></i> Rejoindre WhatsApp
   </a>
 
@@ -1180,15 +1383,11 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-logo" style="margin-bottom: 40px; display: flex; align-items: center; flex-direction: column; gap: 15px;">
-    <img src="logo.png" alt="Logo" style="height: 60px; filter: drop-shadow(0 0 15px rgba(198,255,0,0.3));">
-    <span style="font-family: var(--font-alt); font-size: 24px; font-weight: 800; color: var(--white); text-transform: uppercase;">NARSIS <span style="color: var(--lime)">DECALI</span></span>
-  </div>
   <a href="#hero" onclick="closeMenu()">Accueil</a>
   <a href="#services" onclick="closeMenu()">Services</a>
   <a href="#testimonials" onclick="closeMenu()">Témoignages</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="#" style="color:var(--lime)" onclick="closeMenu();openWhatsApp('','','','Je souhaite rejoindre DECALI.')">
+  <a href="https://wa.me/22899616267" target="_blank" style="color:var(--lime)" onclick="closeMenu()">
     <i class="fab fa-whatsapp"></i> Rejoindre WhatsApp
   </a>
 </div>
@@ -1203,7 +1402,7 @@
     <div class="hero-left">
       <div class="hero-eyebrow">
         <span></span>
-        Trading Premium · Togo &amp; Afrique
+        Trading Premium
       </div>
 
       <h1 class="hero-title">
@@ -1213,7 +1412,7 @@
       </h1>
 
       <p class="hero-desc">
-        Rejoignez une communauté de traders ambitieux et développez des compétences réelles avec un accompagnement premium signé NARSIS DECALI.
+        Rejoignez une communauté de traders ambitieux et développez des compétences réelles avec un accompagnement premium signé DECALI.
       </p>
 
       <div class="hero-btns">
@@ -1225,28 +1424,9 @@
         </a>
       </div>
 
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hero-stat-value" data-count="500">0</div>
-          <div class="hero-stat-label">Étudiants formés</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value" data-count="3">0</div>
-          <div class="hero-stat-label">Ans d'expérience</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value" data-count="95">0</div>
-          <div class="hero-stat-label">% Satisfaction</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-value" data-count="24">0</div>
-          <div class="hero-stat-label">Support 24h/7j</div>
-        </div>
-      </div>
-
       <div class="hero-quote">
         <strong>"</strong> Le succès en trading commence par la discipline. <strong>"</strong>
-        — Narsis Decali
+        — DECALI
       </div>
     </div>
 
@@ -1296,15 +1476,15 @@
 <section id="stats-band">
   <div class="stats-grid">
     <div class="stat-box" data-aos="fade-up">
-      <div class="stat-num">+500</div>
+      <div class="stat-num">+50</div>
       <div class="stat-desc">Traders Formés</div>
     </div>
     <div class="stat-box" data-aos="fade-up" data-aos-delay="100">
-      <div class="stat-num">+3 ans</div>
+      <div class="stat-num">+5 ans</div>
       <div class="stat-desc">Expérience Forex</div>
     </div>
     <div class="stat-box" data-aos="fade-up" data-aos-delay="200">
-      <div class="stat-num">98%</div>
+      <div class="stat-num">93%</div>
       <div class="stat-desc">Taux de satisfaction</div>
     </div>
     <div class="stat-box" data-aos="fade-up" data-aos-delay="300">
@@ -1335,7 +1515,7 @@
         <li>Accès à la communauté privée</li>
         <li>Matériel pédagogique premium</li>
       </ul>
-      <a href="#" class="card-btn" onclick="openWhatsApp('','','','Je souhaite m\'inscrire à la formation trading DECALI.')">
+      <a href="https://narsis-telegram.mymaketou.store/products/accompagnement-prive/checkout" class="card-btn" target="_blank">
         <i class="fab fa-whatsapp"></i> Commencer maintenant
       </a>
     </div>
@@ -1369,7 +1549,7 @@
         <li>Transparence totale des résultats</li>
         <li>Capital entièrement maîtrisé</li>
       </ul>
-      <a href="#" class="card-btn" onclick="openWhatsApp('','','','Je suis intéressé par le Copy Trading DECALI.')">
+      <a href="https://forms.gle/gvaR9q6s1hXGtK4d9" class="card-btn" target="_blank">
         <i class="fab fa-whatsapp"></i> Démarrer le copy
       </a>
     </div>
@@ -1384,7 +1564,7 @@
     <div class="why-left">
       <div class="section-label">Avantages</div>
       <h2 class="section-title">Pourquoi <span>Nous Choisir</span></h2>
-      <p class="section-sub">NARSIS DECALI s'impose comme la référence trading en Afrique de l'Ouest grâce à des méthodes éprouvées et un accompagnement sans égal.</p>
+      <p class="section-sub">DECALI s'impose comme la référence trading en Afrique de l'Ouest grâce à des méthodes éprouvées et un accompagnement sans égal.</p>
 
       <div class="why-cards">
         <div class="why-card" data-aos="fade-up">
@@ -1405,7 +1585,7 @@
         <div class="why-card" data-aos="fade-up" data-aos-delay="180">
           <div class="why-icon"><i class="fas fa-chart-line"></i></div>
           <div class="why-title">Résultats Réels</div>
-          <div class="why-desc">Des stratégies testées et validées sur les marchés réels depuis plus de 3 ans.</div>
+          <div class="why-desc">Des stratégies testées et validées sur les marchés réels depuis plus de 5 ans.</div>
         </div>
         <div class="why-card" data-aos="fade-up" data-aos-delay="240">
           <div class="why-icon"><i class="fas fa-brain"></i></div>
@@ -1442,7 +1622,7 @@
             <div class="metric-label">Satisfaction clients</div>
             <div class="progress-bar"><div class="progress-fill" data-width="98"></div></div>
           </div>
-          <div class="metric-val">98%</div>
+          <div class="metric-val">93%</div>
         </div>
         <div class="metric-row">
           <div>
@@ -1469,82 +1649,143 @@
     <div class="testi-header">
       <div class="section-label">Témoignages</div>
       <h2 class="section-title">Ce Qu'ils <span>Disent</span></h2>
-      <p class="section-sub">Plus de 500 traders ont déjà transformé leur parcours grâce à DECALI. Voici leurs témoignages.</p>
+      <p class="section-sub">+50 traders ont déjà transformé leur parcours grâce à DECALI. Voici leurs témoignages.</p>
     </div>
   </div>
 
   <div class="section-pad" style="padding-top:40px">
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
 
-        <div class="swiper-slide">
+    <!-- SLIDER CUSTOM -->
+    <div class="ts-outer">
+      <div class="ts-track" id="tsTrack">
+
+        <div class="ts-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Grâce à DECALI, j'ai enfin compris le trading. En 2 mois j'ai rentabilisé mon investissement initial. Le suivi est exceptionnel, Narsis est disponible et très pédagogue."</p>
-          <div class="testi-result"><i class="fas fa-trending-up"></i> +$2,300 en 8 semaines</div>
+          <p class="testi-quote">Grâce à DECALI, j'ai enfin compris le trading. En 2 mois j'ai rentabilisé mon investissement initial. Le suivi est exceptionnel et très pédagogue.</p>
+          <div class="testi-result"><i class="fas fa-arrow-trend-up"></i> +$2,300 en 8 semaines</div>
           <div class="testi-author">
             <div class="testi-avatar">KA</div>
-            <div>
+            <div class="testi-info">
               <div class="testi-name">Kofi Agyeman</div>
-              <div class="testi-role">Trader indépendant · Ghana</div>
+              <div class="testi-role">Trader indépendant • Ghana</div>
             </div>
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="ts-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Les signaux DECALI sont vraiment fiables. Avant j'avais peur du forex, maintenant je trade avec confiance. Je recommande à 100% à tous les débutants."</p>
-          <div class="testi-result"><i class="fas fa-trending-up"></i> 87% de trades gagnants</div>
+          <p class="testi-quote">Les signaux DECALI sont vraiment fiables. Avant j'avais peur du forex, maintenant je trade avec confiance. Je recommande à 100% à tous les débutants.</p>
+          <div class="testi-result"><i class="fas fa-arrow-trend-up"></i> 87% de trades gagnants</div>
           <div class="testi-author">
             <div class="testi-avatar">FD</div>
-            <div>
+            <div class="testi-info">
               <div class="testi-name">Fatoumata Diallo</div>
-              <div class="testi-role">Étudiante en finance · Togo</div>
+              <div class="testi-role">Étudiante en finance • Togo</div>
             </div>
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="ts-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"Le copy trading DECALI m'a permis de générer des revenus passifs sans avoir à trader moi-même. Simple, efficace, transparent. Narsis est un vrai professionnel."</p>
-          <div class="testi-result"><i class="fas fa-trending-up"></i> +$1,800/mois passif</div>
+          <p class="testi-quote">Le copy trading DECALI m'a permis de générer des revenus passifs sans avoir à trader moi-même. Simple, efficace, transparent.</p>
+          <div class="testi-result"><i class="fas fa-arrow-trend-up"></i> +$1,800/mois passif</div>
           <div class="testi-author">
             <div class="testi-avatar">YT</div>
-            <div>
+            <div class="testi-info">
               <div class="testi-name">Yao Tetteh</div>
-              <div class="testi-role">Entrepreneur · Bénin</div>
+              <div class="testi-role">Entrepreneur • Bénin</div>
             </div>
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="ts-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"J'avais essayé plusieurs formations avant DECALI — aucune ne m'a apporté de résultats concrets. Avec Narsis, j'ai une stratégie claire et des résultats visibles dès le 1er mois."</p>
-          <div class="testi-result"><i class="fas fa-trending-up"></i> +18% ROI en 30 jours</div>
+          <p class="testi-quote">J'avais essayé plusieurs formations — aucune ne m'a apporté de résultats concrets. Avec DECALI, j'ai une stratégie claire et des résultats visibles dès le 1er mois.</p>
+          <div class="testi-result"><i class="fas fa-arrow-trend-up"></i> +18% ROI en 30 jours</div>
           <div class="testi-author">
             <div class="testi-avatar">MA</div>
-            <div>
+            <div class="testi-info">
               <div class="testi-name">Mariama Amadou</div>
-              <div class="testi-role">Commerçante · Côte d'Ivoire</div>
+              <div class="testi-role">Commerçante • Côte d'Ivoire</div>
             </div>
           </div>
         </div>
 
-        <div class="swiper-slide">
+        <div class="ts-card">
           <div class="testi-stars">★★★★★</div>
-          <p class="testi-quote">"La communauté DECALI est incroyable. On s'entraide, on partage les analyses, on progresse ensemble. C'est bien plus qu'une simple formation, c'est une famille."</p>
-          <div class="testi-result"><i class="fas fa-users"></i> Communauté de +500 traders</div>
+          <p class="testi-quote">La communauté DECALI est incroyable. On s'entraide, on partage les analyses, on progresse ensemble. C'est bien plus qu'une formation, c'est une famille.</p>
+          <div class="testi-result"><i class="fas fa-users"></i> Communauté de +50 traders</div>
           <div class="testi-author">
             <div class="testi-avatar">SB</div>
-            <div>
+            <div class="testi-info">
               <div class="testi-name">Seydou Ballo</div>
-              <div class="testi-role">Ingénieur · Burkina Faso</div>
+              <div class="testi-role">Ingénieur • Burkina Faso</div>
             </div>
           </div>
         </div>
 
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
+        <div class="ts-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">Avant DECALI, je perdais de l'argent à chaque trade. Aujourd'hui j'ai une vraie méthode, une vraie discipline. En 3 mois j'ai enfin trouvé ma régularité sur le forex.</p>
+          <div class="testi-result"><i class="fas fa-arrow-trend-up"></i> Régularité atteinte en 3 mois</div>
+          <div class="testi-author">
+            <div class="testi-avatar">AB</div>
+            <div class="testi-info">
+              <div class="testi-name">Abdoulaye Bah</div>
+              <div class="testi-role">Trader indépendant • Guinée</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ts-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">Les analyses quotidiennes de DECALI m'ont permis de comprendre réellement comment lire les marchés. Je recommande à toute personne sérieuse qui veut progresser vite.</p>
+          <div class="testi-result"><i class="fas fa-arrow-trend-up"></i> +22% de gain en 6 semaines</div>
+          <div class="testi-author">
+            <div class="testi-avatar">CE</div>
+            <div class="testi-info">
+              <div class="testi-name">Chloé Ekanza</div>
+              <div class="testi-role">Infirmière reconvertie • Cameroun</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ts-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">Ce qui m'a le plus surpris c'est la disponibilité. On pose une question à 22h, on a une réponse. Le suivi est vraiment sérieux. Mes résultats parlent d'eux-mêmes.</p>
+          <div class="testi-result"><i class="fas fa-arrow-trend-up"></i> +$3,100 en 10 semaines</div>
+          <div class="testi-author">
+            <div class="testi-avatar">OD</div>
+            <div class="testi-info">
+              <div class="testi-name">Omar Diarra</div>
+              <div class="testi-role">Entrepreneur • Mali</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ts-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">J'ai essayé le copy trading DECALI en parallèle de ma formation. Résultat : je génère des revenus passifs pendant que j'apprends. C'est la meilleure décision que j'ai prise.</p>
+          <div class="testi-result"><i class="fas fa-arrow-trend-up"></i> Revenus passifs dès le 1er mois</div>
+          <div class="testi-author">
+            <div class="testi-avatar">NS</div>
+            <div class="testi-info">
+              <div class="testi-name">Nadia Savané</div>
+              <div class="testi-role">Comptable • Sénégal</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.ts-track -->
+
+      <!-- Flèches -->
+      <button class="ts-btn ts-prev" id="tsPrev" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button>
+      <button class="ts-btn ts-next" id="tsNext" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button>
+    </div><!-- /.ts-outer -->
+
+    <!-- Dots -->
+    <div class="ts-dots" id="tsDots"></div>
+
   </div>
 </section>
 
@@ -1567,7 +1808,7 @@
         <div class="c-icon"><i class="fas fa-envelope"></i></div>
         <div>
           <div class="c-label">Email</div>
-          <div class="c-value">Yehmili.mili@gmail.com</div>
+          <div class="c-value">Contact@decalifx.com</div>
         </div>
       </div>
       <div class="contact-item">
@@ -1620,9 +1861,9 @@
     Prêt à Transformer<br>Votre Niveau en <span>Trading</span> ?
   </h2>
   <p class="cta-desc" data-aos="fade-up">
-    Rejoignez NARSIS DECALI aujourd'hui et commencez votre transformation financière. Places limitées.
+    Rejoignez DECALI aujourd'hui et commencez votre transformation financière. Places limitées.
   </p>
-  <a href="#" class="cta-btn" onclick="openWhatsApp('','','','Je veux rejoindre DECALI maintenant et transformer mon niveau en trading.')" data-aos="zoom-in">
+  <a href="#services" class="cta-btn">
     <i class="fab fa-whatsapp"></i>
     Rejoindre DECALI Maintenant
   </a>
@@ -1631,11 +1872,8 @@
 <!-- ══ FOOTER ════════════════════════════════════════════ -->
 <footer>
   <div class="footer-grid">
-    <div class="footer-brand-container">
-      <a href="#hero" class="footer-brand">
-        <img src="logo.png" alt="Logo">
-        <span>NARSIS <strong>DECALI</strong></span>
-      </a>
+    <div class="footer-brand">
+      <img src="logo.png" alt="DECALI" class="footer-logo-img">
       <p>La référence trading premium en Afrique de l'Ouest. Formations, signaux et copy trading pour tous les niveaux.</p>
       <div class="footer-socials">
         <a href="https://wa.me/22899616267" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
@@ -1670,7 +1908,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <div class="footer-contact-item"><i class="fab fa-whatsapp"></i> +228 99 61 62 67</div>
-      <div class="footer-contact-item"><i class="fas fa-envelope"></i> Yehmili.mili@gmail.com</div>
+      <div class="footer-contact-item"><i class="fas fa-envelope"></i> Contact@decalifx.com</div>
       <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i> Lomé, Togo</div>
       <div style="margin-top:20px">
         <a href="https://wa.me/22899616267" target="_blank" class="card-btn" style="display:inline-flex">
@@ -1681,7 +1919,7 @@
   </div>
 
   <div class="footer-bottom">
-    <div class="footer-copy">© 2024 <span>NARSIS DECALI</span>. Tous droits réservés.</div>
+    <div class="footer-copy">© 2024 <span>DECALI</span>. Tous droits réservés.</div>
     <div class="footer-copy">Fait avec <span>❤</span> pour les traders africains</div>
   </div>
 </footer>
@@ -1801,90 +2039,48 @@ function closeMenu() {
     const w = canvas.width, h = canvas.height;
     ctx.clearRect(0, 0, w, h);
     const min = Math.min(...data), max = Math.max(...data);
-    const range = (max - min) || 0.001;
-
-    // Draw Grid Lines
-    ctx.strokeStyle = 'rgba(255,255,255,0.03)';
-    ctx.lineWidth = 1;
-    for(let i=1; i<=3; i++) {
-      const y = (h / 4) * i;
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-    }
+    const range = max - min || 0.001;
 
     // gradient fill
     const grad = ctx.createLinearGradient(0, 0, 0, h);
-    grad.addColorStop(0, 'rgba(198,255,0,0.15)');
+    grad.addColorStop(0, 'rgba(198,255,0,0.2)');
     grad.addColorStop(1, 'rgba(198,255,0,0)');
 
     ctx.beginPath();
-    let lastX, lastY;
     data.forEach((v, i) => {
       const x = (i / (data.length - 1)) * w;
-      const y = h - ((v - min) / range) * (h * 0.7) - h * 0.15;
+      const y = h - ((v - min) / range) * (h * 0.8) - h * 0.1;
       i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      lastX = x; lastY = y;
     });
-    
-    // Main Line
-    ctx.shadowBlur = 15;
-    ctx.shadowColor = 'rgba(198,255,0,0.5)';
     ctx.strokeStyle = '#C6FF00';
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 2;
     ctx.stroke();
-    ctx.shadowBlur = 0;
 
-    // Fill below
-    const fillPath = new Path2D();
-    data.forEach((v, i) => {
-      const x = (i / (data.length - 1)) * w;
-      const y = h - ((v - min) / range) * (h * 0.7) - h * 0.15;
-      i === 0 ? fillPath.moveTo(x, y) : fillPath.lineTo(x, y);
-    });
-    fillPath.lineTo(w, h); fillPath.lineTo(0, h); fillPath.closePath();
+    // fill below
+    ctx.lineTo(w, h); ctx.lineTo(0, h);
+    ctx.closePath();
     ctx.fillStyle = grad;
-    ctx.fill(fillPath);
-
-    // Pulse dot at current price
-    ctx.beginPath();
-    ctx.arc(lastX, lastY, 4, 0, Math.PI * 2);
-    ctx.fillStyle = '#C6FF00';
     ctx.fill();
-    ctx.beginPath();
-    ctx.arc(lastX, lastY, 8 + Math.sin(Date.now()/200)*3, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(198,255,0,0.4)';
-    ctx.stroke();
   }
 
-  function update() {
+  draw();
+
+  setInterval(() => {
     const last = data[data.length - 1];
     const next = last + (Math.random() - 0.48) * 0.0008;
     data.push(next);
-    if (data.length > 60) data.shift();
+    if (data.length > 80) data.shift();
 
     const price = next.toFixed(4);
     const diff = (next - data[0]).toFixed(4);
     const pct = ((next - data[0]) / data[0] * 100).toFixed(2);
     document.getElementById('livePrice').textContent = price;
     const isUp = diff >= 0;
-    const changeEl = document.getElementById('liveChange');
-    changeEl.textContent = `${isUp ? '▲' : '▼'} ${isUp ? '+' : ''}${diff} (${isUp ? '+' : ''}${pct}%)`;
-    changeEl.style.color = isUp ? '#C6FF00' : '#ff4d4d';
-
-    // Update portfolio slightly
-    const portEl = document.querySelector('.port-value');
-    if(portEl) {
-      const base = 12840;
-      const flux = (next - 1.08) * 50000;
-      portEl.textContent = `+$${(base + flux).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
-    }
-
+    document.getElementById('liveChange').textContent = `${isUp ? '▲' : '▼'} ${isUp ? '+' : ''}${diff} (${isUp ? '+' : ''}${pct}%)`;
+    document.getElementById('liveChange').style.color = isUp ? '#C6FF00' : '#ff4d4d';
     resize();
     draw();
-    requestAnimationFrame(draw);
-  }
-
-  setInterval(update, 1500);
-  requestAnimationFrame(function anim(){ draw(); requestAnimationFrame(anim); });
+  }, 1500);
 })();
 
 // ─── COUNTER ANIMATION ─────────────────────────────────
@@ -1939,17 +2135,7 @@ const wyVis = document.querySelector('.why-visual');
 if (wyVis) progObs.observe(wyVis);
 
 // ─── SWIPER ────────────────────────────────────────────
-new Swiper('.mySwiper', {
-  slidesPerView: 1,
-  spaceBetween: 24,
-  loop: true,
-  autoplay: { delay: 4500, disableOnInteraction: false },
-  pagination: { el: '.swiper-pagination', clickable: true },
-  breakpoints: {
-    640: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 }
-  }
-});
+// Swiper remplacé par slider custom
 
 // ─── WHATSAPP ──────────────────────────────────────────
 function openWhatsApp(name, phone, email, customMsg) {
@@ -1971,6 +2157,119 @@ function submitContact() {
   const text = `Bonjour DECALI 👋\n\nNom : ${name}\nTéléphone : ${phone}\nEmail : ${email || 'N/A'}\nMessage : ${msg || 'Je souhaite en savoir plus.'}`;
   window.open(`https://wa.me/22899616267?text=${encodeURIComponent(text)}`, '_blank');
 }
+
+// ─── SLIDER TESTIMONIALS CUSTOM ──────────────────────────
+(function() {
+  var track = document.getElementById('tsTrack');
+  var dotsContainer = document.getElementById('tsDots');
+  var prevBtn = document.getElementById('tsPrev');
+  var nextBtn = document.getElementById('tsNext');
+  if (!track) return;
+
+  var cards = track.querySelectorAll('.ts-card');
+  var total = cards.length;
+  var current = 0;
+  var perView = 3;
+  var autoplayTimer;
+
+  function getPerView() {
+    if (window.innerWidth <= 640) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
+  }
+
+  function maxIndex() {
+    return Math.max(0, total - perView);
+  }
+
+  function getCardWidth() {
+    var outer = track.parentElement;
+    var gap = 24;
+    var outerW = outer.clientWidth;
+    return (outerW - gap * (perView - 1)) / perView;
+  }
+
+  function updateTrack(animate) {
+    var cardW = getCardWidth();
+    var gap = 24;
+    var offset = current * (cardW + gap);
+    if (animate === false) {
+      track.style.transition = 'none';
+    } else {
+      track.style.transition = 'transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94)';
+    }
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    // update card widths
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].style.minWidth = cardW + 'px';
+      cards[i].style.width = cardW + 'px';
+    }
+    // update dots
+    var dots = dotsContainer.querySelectorAll('.ts-dot');
+    dots.forEach(function(d, idx) { d.classList.toggle('active', idx === current); });
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    var pages = maxIndex() + 1;
+    for (var i = 0; i < pages; i++) {
+      var d = document.createElement('button');
+      d.className = 'ts-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Slide ' + (i+1));
+      (function(idx) { d.addEventListener('click', function() { goTo(idx); }); })(i);
+      dotsContainer.appendChild(d);
+    }
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex()));
+    updateTrack();
+    resetAutoplay();
+  }
+
+  function goNext() { goTo(current >= maxIndex() ? 0 : current + 1); }
+  function goPrev() { goTo(current <= 0 ? maxIndex() : current - 1); }
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(goNext, 4500);
+  }
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    startAutoplay();
+  }
+
+  prevBtn.addEventListener('click', goPrev);
+  nextBtn.addEventListener('click', goNext);
+
+  // Touch/swipe support
+  var touchStartX = 0;
+  track.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? goNext() : goPrev(); }
+  }, {passive:true});
+
+  function init() {
+    perView = getPerView();
+    buildDots();
+    updateTrack(false);
+    startAutoplay();
+  }
+
+  window.addEventListener('resize', function() {
+    perView = getPerView();
+    if (current > maxIndex()) current = maxIndex();
+    buildDots();
+    updateTrack(false);
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
 </script>
 </body>
 </html>
