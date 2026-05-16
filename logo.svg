@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Narsis Decali Logo</title>
+  <desc id="logoDesc">Logo textuel NARSIS DECALI avec barre de progression.</desc>
+  <g fill="#FFFFFF">
+    <text x="30" y="110" font-family="Arial Black, Impact, sans-serif" font-size="108" font-style="italic" font-weight="900" letter-spacing="-3">NARSIS</text>
+    <text x="355" y="198" font-family="Arial Black, Impact, sans-serif" font-size="78" font-weight="900" letter-spacing="-2">DECALI.</text>
+  </g>
+  <rect x="34" y="162" width="288" height="32" rx="16" ry="16" fill="none" stroke="#FFFFFF" stroke-width="4"/>
+  <rect x="38" y="166" width="134" height="24" rx="12" ry="12" fill="#FFFFFF"/>
+</svg>
